@@ -14,14 +14,14 @@ import functions_framework
 from google.cloud import bigquery, secretmanager_v1, logging as cloud_logging
 
 #Slack push notification metadata
-SLACK_OAUTH_TOKEN = 'xoxb-4075992379237-7396238255316-LGfVI8jdrrE0Y0T18CLtnj57'
+SLACK_OAUTH = 'xoxb-4075992379237-7396238255316-LGfVI8jdrrE0Y0T18CLtnj57'
 SLACK_NOTIFICATION_URL = 'https://slack.com/api/chat.postMessage'
 SLACK_NOTIFICATION_CHANNEL_ID = 'C07C8GQ51BJ'
 
 def send_slack_notification(message):
     headers = {
         'Content-type' : 'application/json',
-        'Authorization': f"Bearer {SLACK_OAUTH_TOKEN}"
+        'Authorization': f"Bearer {SLACK_OAUTH}"
     }
     payload = {
         'text': message,
